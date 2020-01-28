@@ -1,0 +1,4 @@
+div
+  .videoWrapper
+    iframe(:src="`${url}?title=0&byline=0&portrait=0&sidedock=0$portrait=0$background=1`" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+    p(v-if='description !== ""') {{description}}

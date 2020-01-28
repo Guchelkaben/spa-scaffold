@@ -1,0 +1,9 @@
+div
+  .navigation.transparent
+    b-navbar(toggleable='md' variant='info' type="dark")
+      b-navbar-brand(href='#') Finanzen richtig einfach
+      b-navbar-toggle(target='nav-collapse')
+      b-collapse#nav-collapse(ref="burgerButton" is-nav="")
+        b-navbar-nav(v-for="item in navItems" :key="item.title")
+          nuxt-link.nav-item(:to="item.url" @click.native="onBurgerButtonClick()") {{item.title}}
+          span.nav-hover

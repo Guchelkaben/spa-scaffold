@@ -1,0 +1,11 @@
+div
+  form-group(:validator="validationmodel" :label="label")
+    input(
+      :id="id"
+      v-model="internValue"
+      @input="onInput"
+      @blur="validationmodel.$touch()"
+      type="type"
+      :maxlength="max"
+      :minlength="min"
+     )

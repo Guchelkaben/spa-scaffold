@@ -1,0 +1,69 @@
+:root {
+  --primary-color: #df7b26;
+  --primary-color-disabled: #C96F20;
+  --secondary-color: #F2C21A;
+  --write-color: white;
+  --disable-color: darkgray;
+  --dark-color: #323232;
+}
+
+* {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  color: var(--write-color);
+}
+
+.grecaptcha-badge {
+  display: none !important;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.title {
+  font-size: 1.5rem !important;
+}
+
+.text-color-primary {
+  color: var(--primary-color);
+}
+
+.text-color-secondary {
+  color: var(--secondary-color);
+}
+
+.height-modification {
+  height: auto !important;
+}
+
+.height-lg-modification {
+  height: auto !important;
+}
+
+@media all and (min-width: 768px) {
+  .height-modification {
+    height: 100vh !important;
+  }
+
+  .title {
+    font-size: 2.5rem !important;
+  }
+}
+@media all and (min-width: 1350px) {
+  .height-lg-modification {
+    height: 100vh !important;
+  }
+}
+
+/* Nuxt Css classes */
+
+.page-enter-active, .page-leave-action {
+  transition: opacity .6s;
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+

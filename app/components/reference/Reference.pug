@@ -1,0 +1,14 @@
+div
+  .reference-wrapper
+    .ref-background
+    .ref-image
+      img.lazyload(:data-src="`/img/reference/${image}`" :alt='name')
+    .ref-info
+      .ref-meta-info
+        p.name {{name}}
+        p.profession {{profession}}
+      .ref-meta-text.mt-4
+        p {{text}}
+    nuxt-link.hover-overlay(:to="`/references/reference/${id}`")
+      .hover-overlay-symbol
+        p Klick

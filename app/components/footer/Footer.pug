@@ -1,0 +1,14 @@
+footer
+  .footer-container
+    .logo-container
+      nuxt-link.nav-item.footer-logo(to="/" @click.native="scrollToTop()") Finanzen richtig einfach
+    .footer-info
+      p Tel.:&nbsp;
+        a(href="tel:0401234123") 040 25 30 88 34
+      p Email.:&nbsp;
+        a(href="mailto:info@finanzen-richtig-einfach.de") info@finanzen-richtig-einfach.de
+    pbtn.mt-3(to="/appointment" text="Meinen Finanzkompass erstellen")
+    .links-container.mt-3
+      span.separator |
+      nuxt-link.nav-item(v-for="item in navItems" :to="`/${item.url}`" :key="item.title") {{item.title}}
+      span.separator |

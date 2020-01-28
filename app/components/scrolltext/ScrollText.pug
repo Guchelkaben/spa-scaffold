@@ -1,0 +1,6 @@
+.scrollText-container
+  transition(name='fade' :duration='500')
+    span.scrollText(v-for="(text, index) in texts" :key='text' v-if="index === arrayPosition")
+      span.text-color-secondary -&nbsp;
+      | {{text}}
+      span.text-color-secondary &nbsp;-

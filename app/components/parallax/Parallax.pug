@@ -1,0 +1,7 @@
+div
+  .parallax-container(ref="parallaxContainer", :style="getStyle()")
+    .parallax-content
+      slot(name="parallax-content")
+        h1 Happy Pony
+    custom-para(containerClass="parallax-img")
+      img(src="/img/bg_compass.webp")

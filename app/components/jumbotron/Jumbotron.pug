@@ -1,0 +1,26 @@
+div
+  .jumbotron-custom(:style="{backgroundColor: bgColor}" :class="heightClass")
+    .video-container(v-if="showVideo")
+      .video-color-overlay(v-if="showVideoOverlay" :style="{backgroundColor: overLayColor}")
+      slot(name='video')
+        video(autoplay loop muted)
+          //source(src='~/assets/video/jumbotronv1.mp4' type='video/mp4')
+    .image-container(v-if="showImage")
+      .image-color-overlay
+      slot(name='image')
+        picture
+          source(:data-srcset="`/img/${bgImage}?webp`" type="image/webp")
+          source(:data-srcset="`/img/${bgImage}`" type="image/jpg")
+          img.lazyload.jumbotron-image(:data-src="`/img/${bgImage}`" :alt="bgImage")
+    .jumbotron-container
+      slot(name='jumbotron-content')
+        h1.jumbotron-h1 {{title}}
+        h2.mt-5 Einfach. Zeitsparend. Auf einer Seite DIN A4.
+        p.description
+          | Endlich eine einfache und zeitsparende Planung der Finanzen haben und damit das gute Gefühl, gegenüber den Ereignissen des Lebens finanziell gewappnet zu sein.
+        slot(name='jumbotron-action')
+          .row.action-container
+            pbtn.col-12.col-md-5.mt-5(to="appointment" text="Kostenlosen Termin vereinbaren")
+            b-button.col-12.col-md-5.mt-5.btn-transparent(v-b-modal.modal-1) Weitere Info's im kurzen Video
+
+    ArrowDown(:onClickFnc="scrollDown" :showArrow="showArrow")

@@ -1,0 +1,15 @@
+.form-container
+  h1.title Terminvereinbarung
+  b-collapse(v-model="showForm")
+    form
+      Input(v-model="name" id="name" :errors="[]" label="Name" :validationmodel="$v.name" type="text" min="3" max="50")
+      Input(v-model="email" id="email" :errors="[]" label="Email-Adresse" :validationmodel="$v.email" type="email" min="3" max="50")
+      Input(v-model="phone" id="phone" :errors="[]" label="Telefonnummer" :validationmodel="$v.phone" type="text" min="3" max="20")
+      SubmitButton(@onClick="sendEmail()" to="" text="Termin vereinbaren" :disabled="$v.$invalid")
+
+      p.agb Ich habe die Datenschutzerklärung gelesen und willige darin ein, dass finanzen-richtig-einfach.de die von mir&nbsp
+       | übermittelten Informationen und Kontaktdaten dazu verwendet, um mit mir anlässlich meiner Interesses an dem Finanzkompass in Verbindung zu treten,
+       | hierüber zu kommunizieren. Dies gilt insbesondere für die Verwendung der E-Mail-Adresse und der Telefonnummer zum vorgenannten Zweck.
+       | Die Einwilligung kann jederzeit mit Wirkung für die Zukunft per E-Mail an info@finanzen-richtig-einfach.de widerrufen werden.
+
+  p(v-if="!showForm && formMessage !== ''") {{formMessage}}
